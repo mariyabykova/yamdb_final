@@ -1,5 +1,5 @@
 # Проект YaMDB
-![Github actions](https://github.com/github/mariyabykova/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+![Github actions](https://github.com/mariyabykova/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 ### Описание 
 Проект YaMDB собирает отзывы пользователей на произведения (книги, фильмы, музыку). Сами произведения здесь не хранятся. Незарегистрированные пользователи могут просматривать информацию о произведениях, жанрах и категориях произведений, а также читать отзывы и комментарии.
