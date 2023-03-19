@@ -1,8 +1,6 @@
 # Проект YaMDB
 ![Github actions](https://github.com/mariyabykova/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
-Работоспособность проекта можно проверить, перейдя по ссылке: http://130.193.41.143/admin 
-
 ### Описание
 Проект YaMDB собирает отзывы пользователей на произведения (книги, фильмы, музыку). Сами произведения здесь не хранятся. Незарегистрированные пользователи могут просматривать информацию о произведениях, жанрах и категориях произведений, а также читать отзывы и комментарии.
 Зарегистрированные пользователи могут оставлять отзывы и комментарии на произведения, а также выставлять оценку от 1 до 10. Право добавлять произведения, жанры и категории есть только у администраторов проекта. 
@@ -65,7 +63,7 @@ http://localhost/admin/
 
 ### Как запустить проект на боевом сервере:
 
-Установить на сервере docker и docker-compose
+Установить на сервере docker и docker-compose.
 Скопировать на сервер файлы docker-compose.yaml и default.conf:
 ```
 scp docker-compose.yaml <логин_на_сервере>@<IP_сервера>:/home/<логин_на_сервере>/docker-compose.yaml
@@ -95,21 +93,21 @@ TELEGRAM_TOKEN= #ID бота в Telegram
 * git commit -m "<commit>"
 * git push
 
-После этого будет запущены процессы workflow:
+После этого будут запущены процессы workflow:
 * проверка кода на соответствие стандарту PEP8 (с помощью пакета flake8) и запуск pytest
 * сборка и доставка докер-образа для контейнера web на Docker Hub
 * автоматический деплой проекта на боевой сервер
 * отправка уведомления в Telegram о том, что процесс деплоя успешно завершился
 
-После успешного завершения процессов workflow на боевом сервере необходимо выполнить следующие командыЖ
+После успешного завершения процессов workflow на боевом сервере необходимо выполнить следующие команды:
 ```
-docker-compose exec web python manage.py migrate
-```
-```
-docker-compose exec web python manage.py createsuperuser
+sudo docker-compose exec web python manage.py migrate
 ```
 ```
-docker-compose exec web python manage.py collectstatic --no-input 
+sudo docker-compose exec web python manage.py createsuperuser
+```
+```
+sudo docker-compose exec web python manage.py collectstatic --no-input 
 ```
 
 ### В API доступны следующие эндпоинты:
@@ -201,7 +199,7 @@ python3 manage.py load_data_csv --path static/data/users.csv --model_name user -
 
 ### Авторы проекта
 
-**Мария Быкова.** Тимлид. Регистрация и авторизация, управление пользователями, права доступа.
+**Мария Быкова.** Тимлид. Регистрация и авторизация, управление пользователями, права доступа. Настройка CI/CD. 
 
 **Михаил Буланкин.** Произведения, категории, жанры, импорт csv-файлов.
 
